@@ -1,22 +1,4 @@
-from consts import CSI, RESET, ZERO
-
-# print('^ y')
-
-# for _ in range(10):
-#     print('|')
-
-# print(f'{CSI}1A', end='')
-
-# for x in range(10):
-#     if x > 1:
-#         print(f"{CSI}{x+1}A{CSI}47m  {RESET}", end=f'{CSI}{10-x}B')
-#     elif x == 1:
-#         print(f"{CSI}1A{CSI}47m  {RESET}", end=f'{CSI}{10-x}B')
-#     else:
-#         print(f"{CSI}1C{CSI}47m  {RESET}", end='')
-
-# print(f'{ZERO}{CSI}12B#------------------------> x')
-
+from consts import CSI, RESET
 
 print('^ y')
 for y in range(10, -1, -1):

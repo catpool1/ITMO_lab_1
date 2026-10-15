@@ -1,26 +1,27 @@
 from consts import CSI, RESET
 
-p1 = 0
-p2 = 0
-cnt1 = 0
-cnt2 = 0
+even = 0
+odd = 0
+count_even = 0
+count_odd = 0
+
 
 with open('sequence.txt') as f:
     for n, i in enumerate(f.readlines()):
         i = float(i)
 
         if n % 2 == 0:
-            p2 += i
-            cnt2 += 1
+            odd += abs(i)
+            count_odd += 1
         else:
-            p1 += i
-            cnt1 += i
+            even += abs(i)
+            count_even += 1
 
 
-p1 = p1/cnt1
-p2 = p2/cnt2
+even = even/count_even
+odd = odd/count_odd
 
-p1, p2 = round(p1/((p1+p2)/100)), round(p2/((p1+p2)/100))
+even, odd = round(even/((even+odd)/100)), round(odd/((even+odd)/100))
 
-print(f"{p1}% {CSI}41m{' '*p1}{RESET}")
-print(f"{p2}% {CSI}44m{' '*p2}{RESET}")
+print(f"Чётные:\t\t{even}% {CSI}41m{' '*even}{RESET}")
+print(f"Нечётные:\t{odd}% {CSI}44m{' '*odd}{RESET}")
